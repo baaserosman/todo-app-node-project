@@ -1,0 +1,19 @@
+{
+	"family": "todo_app",
+	"networkMode": "awsvpc",
+	"containerDefinitions": [{
+		"name": "todo_app",
+		"image": "225110945643.dkr.ecr.us-east-1.amazonaws.com/todo_app:latest",
+		"portMappings": [{
+			"containerPort": 3000,
+			"protocol": "tcp"
+		}],
+		"essential": true
+	}],
+	"requiresCompatibilities": [
+		"FARGATE"
+	],
+	"cpu": "256",
+	"memory": "512",
+        "executionRoleArn": "arn:aws:iam::225110945643:role/ecsTaskExecutionRole"
+}
